@@ -1,0 +1,10 @@
+G:\github\RabbitMQ\RabbitMQ\bin\Debug\RabbitMQ.exe.config
+G:\github\RabbitMQ\RabbitMQ\bin\Debug\RabbitMQ.exe
+G:\github\RabbitMQ\RabbitMQ\bin\Debug\RabbitMQ.pdb
+G:\github\RabbitMQ\RabbitMQ\bin\Debug\RabbitMQ.Client.dll
+G:\github\RabbitMQ\RabbitMQ\bin\Debug\RabbitMQ.Client.xml
+G:\github\RabbitMQ\RabbitMQ\obj\Debug\RabbitMQ.csproj.CoreCompileInputs.cache
+G:\github\RabbitMQ\RabbitMQ\obj\Debug\RabbitMQ.csproj.CopyComplete
+G:\github\RabbitMQ\RabbitMQ\obj\Debug\RabbitMQ.exe
+G:\github\RabbitMQ\RabbitMQ\obj\Debug\RabbitMQ.pdb
+G:\github\RabbitMQ\RabbitMQ\obj\Debug\RabbitMQ.csprojAssemblyReference.cache

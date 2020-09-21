@@ -63,10 +63,9 @@ namespace RabbitMQRec
             {
                 using (IModel channel = conn.CreateModel())
                 {
-                    //channel.ExchangeDeclare(ExchangeName, "direct", durable: true, autoDelete: false, arguments: null);
-                    channel.QueueDeclare(QueueName, durable: true, autoDelete: false, exclusive: false, arguments: null);
-                    channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);//告诉broker同一时间只处理一个消息
-                                                                                       //channel.QueueBind(QueueName, ExchangeName, routingKey: QueueName);
+                    //作为消费者只需要监听队列即可
+                   channel.BasicQos(prefetchSize: 0, prefetchCount: 5, global: false);//告诉broker同一时间只处理一个消息（服务器只发送一条消息给消费者）
+          //通过getmassge可以去消费消息，第一个选择项中选择第二
                     var consumer = new EventingBasicConsumer(channel);
                     consumer.Received += (model, ea) =>
                     {
@@ -80,9 +79,9 @@ namespace RabbitMQRec
                     };
                     //noAck设置false,告诉broker，发送消息之后，消息暂时不要删除，等消费者处理完成再说
                     channel.BasicConsume(QueueName, noAck: false, consumer: consumer);
-
+                    Console.ReadLine();
                     Console.WriteLine("按任意值，退出程序");
-                    Console.ReadKey();
+                   
                 }
             }
         }

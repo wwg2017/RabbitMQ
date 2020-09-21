@@ -59,17 +59,23 @@ namespace RabbitMQ
             {
                 using (IModel channel = conn.CreateModel())
                 {
-                    channel.ExchangeDeclare(ExchangeName, "direct", durable: true, autoDelete: false, arguments: null);
-                    channel.QueueDeclare(QueueName, durable: true, autoDelete: false, exclusive: false, arguments: null);
-                    channel.QueueBind(QueueName, ExchangeName, routingKey: QueueName);
+
+                    //消息--routingkey -》交换机- bingdkey -》队列
+                    //routingkey和bingdkey通过不同的类型做不同的映射
+
+                    //这些参数作为硬编码在程序组写着，只一次就够了，也可以不写，提前通过界面建立队列和交换机的关系，之后通过直接通过key发送消息到交换机就可以了，交换机自动根据key查询
+                    //
+                    //channel.ExchangeDeclare(ExchangeName, "direct", durable: true, autoDelete: false, arguments: null);
+                    //channel.QueueDeclare(QueueName, durable: true, autoDelete: false, exclusive: false, arguments: null);
+                    //channel.QueueBind(QueueName, ExchangeName, routingKey: "2");
 
                     var props = channel.CreateBasicProperties();
                     props.Persistent = true;
                     string vadata = Console.ReadLine();
                     while (vadata != "exit")
                     {
-                        var msgBody = Encoding.UTF8.GetBytes(vadata);
-                        channel.BasicPublish(exchange: ExchangeName, routingKey: QueueName, basicProperties: props, body: msgBody);
+                        var msgBody = Encoding.UTF8.GetBytes(vadata);                      
+                        channel.BasicPublish(exchange: ExchangeName, routingKey: "3", basicProperties: props, body: msgBody);
                         Console.WriteLine(string.Format("***发送时间:{0}，发送完成，输入exit退出消息发送", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
                         vadata = Console.ReadLine();
                     }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OfficeTools.Pdf2Image.Word2Image" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpringBootExamples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nxin.zlw.app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pdf.js" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/redislock/MyRedis" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/redislock/MyRedisLockSkills" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springboot" vcs="Git" />
+  </component>
+</project>
